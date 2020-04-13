@@ -1,1 +1,3 @@
-print(sum(int(i) for i in str(input())))
+import sys
+digit_string = sys.argv[1]
+print(sum(int(i) for i in str(digit_string)))
