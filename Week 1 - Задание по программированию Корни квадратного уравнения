@@ -1,0 +1,23 @@
+import math
+import sys 
+
+a = int(sys.argv[1]) 
+b = int(sys.argv[2]) 
+c = int(sys.argv[3])
+
+#a = float(input())
+#b = float(input())
+#c = float(input())
+ 
+def roots(a,b,c):
+    discr = b ** 2 - 4 * a * c
+    if discr > 0:
+        x1 = (-b + math.sqrt(discr)) / (2 * a)
+        x2 = (-b - math.sqrt(discr)) / (2 * a)
+        print("%d\n%d" % (int(x1), int(x2)))
+    elif discr == 0:
+        x = -b / (2 * a)
+        print(x)
+    else:
+        print("Корней нет")
+roots(a,b,c)
