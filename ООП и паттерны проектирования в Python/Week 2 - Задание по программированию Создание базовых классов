@@ -23,7 +23,6 @@ class Base(metaclass=ABCMeta):
         pass
 
 
-
 class A(Base):
 
 
