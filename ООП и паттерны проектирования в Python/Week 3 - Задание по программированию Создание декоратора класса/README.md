@@ -1,0 +1,1 @@
+![screencapture-coursera-org-learn-oop-patterns-python-programming-R464w-sozdaniie-diekoratora-klassa-2020-05-08-10_25_47](https://user-images.githubusercontent.com/48917675/81431663-5df70800-9116-11ea-8bc8-8d6276b04e10.png)
