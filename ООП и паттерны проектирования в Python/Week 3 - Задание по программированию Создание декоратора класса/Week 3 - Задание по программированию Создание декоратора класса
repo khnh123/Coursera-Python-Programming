@@ -62,9 +62,9 @@ class Berserk(AbstractPositive):
         stats['Agility'] += 7
         stats['Luck'] += 7
 
-        stats['Perception'] += 3
-        stats['Charisma'] += 3
-        stats['Intelligence'] += 3
+        stats['Perception'] -= 3
+        stats['Charisma'] -= 3
+        stats['Intelligence'] -= 3
 
         stats['HP'] += 50
         return stats
@@ -87,7 +87,7 @@ class AbstractNegative(AbstractEffect):
 
     def get_negative_effects(self):
         effects = self.base.get_negative_effects()
-        effects.append(self.__method__.__name__)
+        effects.append(self.__class__.__name__)
         return effects
 
 
