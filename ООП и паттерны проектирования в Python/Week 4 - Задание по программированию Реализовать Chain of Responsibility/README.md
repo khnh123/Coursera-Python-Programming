@@ -1,0 +1,1 @@
+![screencapture-coursera-org-learn-oop-patterns-python-programming-B6UXU-riealizovat-chain-of-responsibility-2020-05-09-10_45_26](https://user-images.githubusercontent.com/48917675/81481069-49804180-91e2-11ea-8361-90448eb6c27f.png)
