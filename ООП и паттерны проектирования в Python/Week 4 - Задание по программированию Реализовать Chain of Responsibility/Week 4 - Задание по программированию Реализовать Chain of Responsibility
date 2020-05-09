@@ -1,0 +1,76 @@
+
+
+class SomeObject:
+    def __init__(self):
+        self.integer_field = 0
+        self.float_field = 0.0
+        self.string_field = ""
+
+class NullHandler(object):
+    def __init__(self, handler): # Создает обьект и передает его дальше
+        self.handler = handler
+
+    def handle(self, obj, event=None):
+        if self.handler: # передает его дальше
+            return self.handler.handle(obj, event)
+
+class IntHandler(NullHandler):
+    def handle(self, obj, event=None):
+        if event.field_type == int: # если тип переменной равен
+            if event.field_value != None: # Если event = чему-то,  EventSet()
+                obj.integer_field = event.field_value # значение SomeObject меняется на field_value с таким же типом
+            else:  # Если event = None
+                return obj.integer_field
+        else: # Иначе передает дпльше
+            return super().handle(obj, event)
+
+class FloatHandler(NullHandler):
+    def handle(self, obj, event=None):
+        if event.field_type == float:
+            if event.field_value != None:
+                obj.float_field = event.field_value
+            else:
+                return obj.float_field
+        else:
+            return super().handle(obj, event)
+
+
+class StrHandler(NullHandler):
+    def handle(self, obj, event=None):
+        if event.field_type == str:
+            if event.field_value != None:
+                obj.string_field = event.field_value
+            else:
+                return obj.string_field
+        else:
+            return super().handle(obj, event)
+
+
+class EventGet(object):  # то, что надо вернуть
+    def __init__(self, field_type): # инициалтзация переменной в обьекте
+        self.field_type = field_type
+        self.field_value = None
+
+
+class EventSet(object):
+    def __init__(self, field_value): # инициалтзация переменной в обьекте
+        self.field_value = field_value
+        self.field_type = type(field_value)
+
+
+if __name__ == '__main__':
+    obj = SomeObject()
+    obj.integer_field = 42
+    obj.float_field = 3.14
+    obj.string_field = "some text"
+    chain = IntHandler(FloatHandler(StrHandler(NullHandler))) # Цепочка выполнения всех фунций
+    print(chain.handle(obj, EventGet(int))) # EventGet - тип - то, что должно вернуть
+    print(chain.handle(obj, EventGet(float)))
+    print(chain.handle(obj, EventGet(str)))
+    chain.handle(obj, EventSet(0))  # EventGet - значение - то, что должно вернуть
+    print(chain.handle(obj, EventGet(int)))
+    chain.handle(obj, EventSet(0))
+    print(chain.handle(obj, EventGet(float)))
+    chain.handle(obj, EventSet('new text'))
+    print(chain.handle(obj, EventGet(str)))
+
