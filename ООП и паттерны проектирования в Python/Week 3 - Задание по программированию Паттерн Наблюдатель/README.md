@@ -1,0 +1,1 @@
+![screencapture-coursera-org-learn-oop-patterns-python-programming-17FAv-pattiern-nabliudatiel-2020-05-09-08_22_09](https://user-images.githubusercontent.com/48917675/81477775-63b02480-91ce-11ea-9e93-9a1153111368.png)
