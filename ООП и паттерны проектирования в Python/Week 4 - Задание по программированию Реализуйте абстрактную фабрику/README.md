@@ -1,0 +1,1 @@
+![screencapture-coursera-org-learn-oop-patterns-python-programming-Bx1kv-riealizuitie-abstraktnuiu-fabriku-2020-05-10-09_03_38](https://user-images.githubusercontent.com/48917675/81504326-5f9f0800-929d-11ea-8d1f-348cc0b5a339.png)
