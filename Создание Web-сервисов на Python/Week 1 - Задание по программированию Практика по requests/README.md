@@ -1,0 +1,1 @@
+![screencapture-coursera-org-learn-python-for-web-programming-POfZx-praktika-po-requests-2020-05-12-04_03_38](https://user-images.githubusercontent.com/48917675/81677268-a576e000-9405-11ea-9bad-712dc1de6389.png)
